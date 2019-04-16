@@ -7,6 +7,7 @@ From: kiwiroy/perlbrew-base
     Version 1.00
 
 %post -c /bin/bash
+    source $SINGULARITY_ENVIRONMENT
     env
     perlbrew available
     exit 1
