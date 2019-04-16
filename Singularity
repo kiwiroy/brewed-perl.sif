@@ -7,5 +7,6 @@ From: kiwiroy/perlbrew-base
     Version 1.00
 
 %post -c /bin/bash
+    env
     perlbrew available
     exit 1
