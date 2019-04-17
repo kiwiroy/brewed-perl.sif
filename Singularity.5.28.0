@@ -12,11 +12,8 @@ From: kiwiroy/perlbrew-base
     export PERLBREW_PERL=perl-5.28.0
     # > ${PERLBREW_ROOT}/build.${PERLBREW_PERL}.log
     perlbrew --notest --verbose install ${PERLBREW_PERL} > /dev/null
-    perlbrew use ${PERLBREW_PERL}
-    env
-    perlbrew env ${PERLBREW_PERL}
+    perlbrew env ${PERLBREW_PERL}                 >> $SINGULARITY_ENVIRONMENT
     echo 'export PATH="${PERLBREW_PATH}:${PATH}"' >> $SINGULARITY_ENVIRONMENT
-    exit 1
 
 %test
     true
