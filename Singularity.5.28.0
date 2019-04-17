@@ -14,6 +14,3 @@ From: kiwiroy/perlbrew-base
     perlbrew --notest --verbose install ${PERLBREW_PERL} > /dev/null
     perlbrew env ${PERLBREW_PERL}                 >> $SINGULARITY_ENVIRONMENT
     echo 'export PATH="${PERLBREW_PATH}:${PATH}"' >> $SINGULARITY_ENVIRONMENT
-
-%test
-    true
