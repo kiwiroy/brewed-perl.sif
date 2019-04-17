@@ -10,7 +10,7 @@ From: kiwiroy/perlbrew-base
     source $SINGULARITY_ENVIRONMENT
     export PERLBREW_PERL=perl-5.28.1
     perlbrew install-patchperl --yes
-    perlbrew --force install ${PERLBREW_PERL}
+    perlbrew --notest --verbose install ${PERLBREW_PERL} > ${PERLBREW_ROOT}/build.${PERLBREW_PERL}.log
     perlbrew use ${PERLBREW_PERL}
     env
     perlbrew env ${PERLBREW_PERL}
