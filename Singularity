@@ -9,6 +9,6 @@ From: kiwiroy/perlbrew-base
 %post -c /bin/bash
     source $SINGULARITY_ENVIRONMENT
     perlbrew install-patchperl --yes
-    perlbrew install perl-5.28.1 || tail -n100 $PERLBREW_ROOT/build.perl-5.28.1.log
+    perlbrew --force install 5.28.1
     env
     exit 1
