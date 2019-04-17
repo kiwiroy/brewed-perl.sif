@@ -15,6 +15,7 @@ From: kiwiroy/perlbrew-base
     perlbrew use ${PERLBREW_PERL}
     env
     perlbrew env ${PERLBREW_PERL}
+    echo 'export PATH="${PERLBREW_PATH}:${PATH}"' >> $SINGULARITY_ENVIRONMENT
     exit 1
 
 %test
