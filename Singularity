@@ -26,10 +26,9 @@ From: kiwiroy/perlbrew.sif
     echo '****************************************************'
     echo '# Using bash as default shell' >  $SINGULARITY_ENVIRONMENT
     echo "export SHELL=$SHELL"           >> $SINGULARITY_ENVIRONMENT
-    echo 'export PERLBREW_HOME=$PERLBREW_HOME'    >> $SINGULARITY_ENVIRONMENT
+    echo "export PERLBREW_HOME=$PERLBREW_HOME"    >> $SINGULARITY_ENVIRONMENT
     perlbrew env ${PERLBREW_PERL}                 >> $SINGULARITY_ENVIRONMENT
     echo 'export PATH="${PERLBREW_PATH}:${PATH}"' >> $SINGULARITY_ENVIRONMENT
-    env
 
 %runscript
     $*
@@ -39,4 +38,4 @@ From: kiwiroy/perlbrew.sif
       . $SINGULARITY_ENVIRONMENT
     fi
     which perl
-    env
+    env | grep -i ^perl
