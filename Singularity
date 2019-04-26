@@ -16,5 +16,6 @@ From: kiwiroy/perlbrew.sif
     echo 'export PATH="${PERLBREW_PATH}:${PATH}"' >> $SINGULARITY_ENVIRONMENT
 
 %test
-    perlbrew use perl-5.28.2
-    which perl
+    env | grep -i ^perl
+    #perlbrew use perl-5.28.2
+    #which perl
