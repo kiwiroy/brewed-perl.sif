@@ -14,8 +14,12 @@ From: kiwiroy/perlbrew.sif
     perlbrew --notest --verbose install ${PERLBREW_PERL} > /dev/null
     perlbrew env ${PERLBREW_PERL}                 >> $SINGULARITY_ENVIRONMENT
     echo 'export PATH="${PERLBREW_PATH}:${PATH}"' >> $SINGULARITY_ENVIRONMENT
+    env
 
 %test
-    #env | grep -i ^perl
-    #perlbrew use perl-5.28.2
+    if test "${SINGULARITY_CHECKTAGS:-}" = "bootstrap"; then
+      . $SINGULARITY_ENVIRONMENT
+    fi
+    perlbrew use perl-5.28.2
     which perl
+    env
