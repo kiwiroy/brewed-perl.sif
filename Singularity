@@ -27,11 +27,13 @@ From: kiwiroy/singularity-perlbrew
     echo '# Using bash as default shell' >  $SINGULARITY_ENVIRONMENT
     echo "export SHELL=$SHELL"           >> $SINGULARITY_ENVIRONMENT
     echo "export PERLBREW_HOME=$PERLBREW_HOME"    >> $SINGULARITY_ENVIRONMENT
+    PERLBREW_LIB= \
+    PERL5LIB= PERL_LOCAL_LIB_ROOT= \
     perlbrew env ${PERLBREW_PERL}                 >> $SINGULARITY_ENVIRONMENT
     echo 'export PATH="${PERLBREW_PATH}:${PATH}"' >> $SINGULARITY_ENVIRONMENT
 
 %runscript
-    $*
+    exec perl "$@"
 
 %test
     if test "${SINGULARITY_CHECKTAGS:-}" = "bootstrap"; then
