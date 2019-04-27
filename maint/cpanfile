@@ -1,0 +1,3 @@
+## -*- mode: perl; -*-
+requires 'Mojolicious';
+requires 'Applify';
