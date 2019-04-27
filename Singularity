@@ -1,5 +1,5 @@
 Bootstrap: shub
-From: kiwiroy/perlbrew.sif
+From: kiwiroy/singularity-perlbrew
 
 %labels
     Author kiwiroy@users-noreply.github.com
@@ -37,5 +37,5 @@ From: kiwiroy/perlbrew.sif
     if test "${SINGULARITY_CHECKTAGS:-}" = "bootstrap"; then
       . $SINGULARITY_ENVIRONMENT
     fi
-    which perl
+    perl -E 'say $^X; say $^V;'
     env | grep -i ^perl
