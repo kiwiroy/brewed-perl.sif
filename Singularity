@@ -33,7 +33,7 @@ From: kiwiroy/singularity-perlbrew
     echo 'export PATH="${PERLBREW_PATH}:${PATH}"' >> $SINGULARITY_ENVIRONMENT
 
 %runscript
-    exec perl "$@"
+    exec perl "${@}"
 
 %test
     if test "${SINGULARITY_CHECKTAGS:-}" = "bootstrap"; then
